@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Entity;
+namespace App\Model\Entity;
 
 class Organization{
     /**
