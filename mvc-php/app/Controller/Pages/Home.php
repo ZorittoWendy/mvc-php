@@ -3,6 +3,7 @@
 namespace App\Controller\Pages;
 
 use App\Utils\View;
+use App\Controller\Entity;
 
 class Home extends Page{
     /**
