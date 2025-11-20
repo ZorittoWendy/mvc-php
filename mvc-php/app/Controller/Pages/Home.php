@@ -2,8 +2,20 @@
 
 namespace App\Controller\Pages;
 
-class Home{
+use App\Utils\View;
+
+class Home extends Page{
+    /**
+     * Método resposável por retornar o conteúdo (view) da nossa home 
+     * @return string
+     */
     public static function getHome() {
-        return 'Olá mundo';
+        $content = View::render('pages/home',[
+            'name' => 'zoritto-DEV',
+            'description' => 'Canal do youtube: https://www.youtube.com/watch?v=Hq6OHPH_lwU',
+            'site' => 'https://youtube.com.br'
+        ]);
+        //RETORNA A VIEW DA PAGINA
+        return parent::getPage('zoritto - dev -HOME',$content );
     }
 }
