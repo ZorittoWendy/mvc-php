@@ -57,5 +57,32 @@ class Response{
         $this->headers[$key] = $value;
     }
 
+    /** 
+     * Metodo responsavel por enviar os headers para o navegador
+    */
+    private function sendHeaders(){
+        //STATUS
+        http_response_code($this->httpCode);
+
+        //ENVIAR HEADERS
+        foreach($this->headers as $key=>$value){
+            header($key.': '.$value);
+        }
+    }
+
+    /**
+     * Metodo responsavel por enviar a resposta para o usuario
+     */
+    public function sendResponse() {
+        //ENVIA OS HEADERS
+        $this->sendHeaders();
+
+        //IMPRIME O CONTEUDO
+        switch ($this->contentType){
+            case 'text/html':
+                echo $this->content;
+                exit;
+        }
+    }
 
 }
