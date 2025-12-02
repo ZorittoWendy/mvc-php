@@ -13,6 +13,6 @@ $obRouter->get('/', [
 //ROTA HOME
 $obRouter->get('/sobre', [
     function () {
-        return new Response(200, Pages\Home::getHome());
+        return new Response(200, Pages\About::getHome());
     }
 ]);
