@@ -5,21 +5,21 @@ namespace App\Controller\Pages;
 use App\Utils\View;
 use App\Model\Entity\Organization;
 
-class Home extends Page{
+class Home extends Page
+{
     /**
      * Método resposável por retornar o conteúdo (view) da nossa home 
      * @return string
      */
-    public static function getHome() {
+    public static function getHome()
+    {
         //ORGANIZACAO
         $obOrganization = new Organization;
 
-        $content = View::render('pages/home',[
+        $content = View::render('pages/home', [
             'name' => $obOrganization->name,
-            'description' => $obOrganization->description,
-            'site' => $obOrganization->site
         ]);
         //RETORNA A VIEW DA PAGINA
-        return parent::getPage('zoritto - dev -HOME',$content );
+        return parent::getPage('HOME > WDEV', $content);
     }
 }
