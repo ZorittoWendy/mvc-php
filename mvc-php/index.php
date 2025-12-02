@@ -4,12 +4,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 use App\Http\Router;
 
-
 define('URL', 'http://localhost/mvc-php');
 
 $obRouter = new Router(URL);
 
-//INCLUI AS ROTAS DE PAGINAS
+//INCLUI AS ROTAS DE PAGINA
 include __DIR__ . '/routes/pages.php';
 
 //IMPRIME O RESPONSE DA ROTA
